@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+body {
+  font-family: sans-serif;
+}
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap');
+
+:root {
+  /* Colors */
+  --bg-white: #ffffff;
+  --text-black: #000000;
+  
+  /* Fonts */
+  --font-logo: 'Montserrat', sans-serif;
+  --font-nav: 'Poppins', sans-serif;
+  
+  /* Sizes & Spacing */
+  --container-max-width: 1286px;
+  --logo-size: 34px;
+  --nav-link-size: 16px;
+  --nav-gap: 75px;
+  --icons-gap: 45px; /* Figma ka 4.5 spacing scaling pe 45px hai */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+body {
+  font-family: var(--font-nav);
+  background-color: var(--bg-white);
+}
+
+/* Header & Container */
+header {
+  width: 100%;
+  background-color: var(--bg-white);
+  padding: 28px 0; /* Vertical spacing */
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Screen sides protection */
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo span {
+  font-family: var(--font-logo);
+  font-size: var(--logo-size);
+  font-weight: 700;
+  color: var(--text-black);
+}
+
+/* Navigation Links */
+.navbar-links ul {
+  display: flex;
+  align-items: center;
+  gap: var(--nav-gap);
+}
+
+.navbar-links a {
+  font-family: var(--font-nav);
+  font-size: var(--nav-link-size);
+  font-weight: 500;
+  color: var(--text-black);
+  transition: opacity 0.2s ease;
+}
+
+.navbar-links a:hover {
+  opacity: 0.7;
+}
+
+/* Icons Section */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: var(--icons-gap); /* Exact Figma Gap */
+}
+
+.nav-icons img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-icons img:hover {
+  transform: scale(1.1);
+}
