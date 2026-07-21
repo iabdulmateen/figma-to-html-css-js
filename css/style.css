@@ -144,3 +144,100 @@ header {
 .nav-icons img:hover {
   transform: scale(1.1);
 }
+:root {
+  /* Colors */
+  --bg-white: #ffffff;
+  --text-black: #000000;
+  --primary-color: #B88E2F;
+  --card-bg: #FFF3E3;
+  --text-dark: #333333;
+  
+  /* Fonts */
+  --font-logo: 'Montserrat', sans-serif;
+  --font-main: 'Poppins', sans-serif;
+  
+  /* Layout */
+  --container-max-width: 1286px;
+}
+
+/* Base resets as before... */
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  min-height: 716px; 
+  
+  /* Background Image Setup */
+  background-image: url('../assets/images/hero-bg.png'); 
+  background-position: center center;
+  background-repeat: no-no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  display: flex;
+  justify-content: flex-end; /* Card right side pe aligned hai */
+  padding: 0 20px;
+}
+
+/* Floating Card */
+.hero-card {
+  width: 100%;
+  max-width: 643px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 62px 43px 37px 39px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-subheading {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.hero-title {
+  font-family: var(--font-main);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 65px;
+  color: var(--primary-color);
+  margin-bottom: 17px;
+}
+
+.hero-description {
+  font-family: var(--font-main);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--text-dark);
+  margin-bottom: 46px;
+}
+
+.hero-btn {
+  align-self: flex-start;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 25px 72px;
+  border: none;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #967123;
+}
