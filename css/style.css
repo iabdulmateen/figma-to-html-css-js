@@ -241,3 +241,79 @@ header {
 .hero-btn:hover {
   background-color: #967123;
 }
+/* Browse The Range Section */
+.range-section {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: var(--bg-white);
+}
+
+.range-container {
+  max-width: 1183px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.range-header {
+  margin-bottom: 60px;
+}
+
+.range-title {
+  font-family: var(--font-main);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0px;
+}
+
+.range-subtitle {
+  font-family: var(--font-main);
+  font-size: 20px;
+  font-weight: 400;
+  color: #666666;
+  margin-top: 5px;
+}
+
+/* Category Grid */
+.range-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.range-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 381px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.range-img-wrapper {
+  width: 100%;
+  height: 480px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.range-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.range-card:hover .range-img-wrapper img {
+  transform: scale(1.03); /* Soft hover effect */
+}
+
+.range-card-title {
+  font-family: var(--font-main);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 30px;
+}

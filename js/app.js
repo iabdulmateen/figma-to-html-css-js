@@ -27,3 +27,38 @@ const renderHeroCard = () => {
 document.addEventListener("DOMContentLoaded", () => {
   renderHeroCard();
 });
+// Categories Data Array
+const categoriesData = [
+  {
+    title: "Dining",
+    image: "assets/images/dining.png"
+  },
+  {
+    title: "Living",
+    image: "assets/images/living.png"
+  },
+  {
+    title: "Bedroom",
+    image: "assets/images/bedroom.png"
+  }
+];
+
+const renderCategories = () => {
+  const gridContainer = document.getElementById("range-grid-target");
+  if (!gridContainer) return;
+
+  gridContainer.innerHTML = categoriesData.map(category => `
+    <div class="range-card">
+      <div class="range-img-wrapper">
+        <img src="${category.image}" alt="${category.title}">
+      </div>
+      <h3 class="range-card-title">${category.title}</h3>
+    </div>
+  `).join("");
+};
+
+// Update DOMContentLoaded event listener
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof renderHeroCard === "function") renderHeroCard();
+  renderCategories();
+});
