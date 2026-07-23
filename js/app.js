@@ -212,3 +212,66 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof renderCategories === "function") renderCategories();
   renderProducts();
 });
+const initRoomsSlider = () => {
+  const nextBtn = document.querySelector(".slider-next-arrow");
+  const slider = document.querySelector(".rooms-slider");
+  const dots = document.querySelectorAll(".slider-dots .dot");
+  const cards = document.querySelectorAll(".room-card");
+
+  if (!slider || cards.length === 0) return;
+
+  let currentIndex = 0;
+  const totalCards = cards.length;
+
+  // Function to update active card & move slider
+  const updateSlider = (index) => {
+    currentIndex = index;
+
+    // 1. Move Track
+    const cardWidth = 372;
+    const gap = 24;
+    const moveAmount = (cardWidth + gap) * currentIndex;
+    slider.style.transform = `translateX(-${moveAmount}px)`;
+
+    // 2. Active Card Class Update
+    cards.forEach((card, i) => {
+      if (i === currentIndex) {
+        card.classList.add("room-card-active");
+      } else {
+        card.classList.remove("room-card-active");
+      }
+    });
+
+    // 3. Active Dot Update
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+    });
+  };
+
+  // Click Event: Next Arrow Button
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      const nextIndex = (currentIndex + 1) % totalCards;
+      updateSlider(nextIndex);
+    });
+  }
+
+  // Click Event: Direct Image/Card Click
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      updateSlider(index);
+    });
+  });
+
+  // Click Event: Navigation Dots Click
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      updateSlider(index);
+    });
+  });
+};
+
+// Initialize after page content loads
+document.addEventListener("DOMContentLoaded", () => {
+  initRoomsSlider();
+});
