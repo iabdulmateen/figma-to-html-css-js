@@ -692,7 +692,7 @@ header {
   gap: 12px;
   margin-top: 24px;
   padding-left: 428px;
-  
+
 }
 
 .dot {
@@ -708,4 +708,88 @@ header {
   background-color: var(--primary-color, #B88E2F);
   outline: 1px solid var(--primary-color, #B88E2F);
   outline-offset: 4px;
+}
+/*Funiro Furniture Gallery Section */
+.furniture-section {
+  width: 100%;
+  padding: 40px 0 50px 0;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  /* border-bottom: 1px solid #D8D8D8; Neeche wali horizontal line */
+}
+
+.furniture-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.furniture-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #616161;
+  margin-bottom: 8px;
+}
+
+.furniture-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #3A3A3A;
+}
+
+/* Gallery Wrapper (Asymmetric Masonry) */
+.furniture-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.gallery-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.gallery-row.row-bottom {
+  align-items: flex-start;
+}
+
+/* Image Hover & Base Effect */
+.furniture-gallery img {
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.furniture-gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Specific Image Dimensions matching Figma */
+.img-g1 { width: 274px; height: 382px; }
+.img-g2 { width: 381px; height: 323px; }
+.img-g3 { width: 451px; height: 312px; }
+.img-g4 { width: 344px; height: 242px; }
+.img-g5 { width: 295px; height: 392px; }
+.img-g6 { width: 290px; height: 348px; }
+.img-g7 { width: 178px; height: 242px; }
+.img-g8 { width: 258px; height: 196px; }
+.img-g9 { width: 425px; height: 433px; }
+
+.furniture-divider {
+  border: none;
+  border-top: 1px solid #D8D8D8; /* Line ka color */
+  margin-top: 80px;              /* Images se gap */
+  margin-bottom: 0;
+  width: 100%;
 }
