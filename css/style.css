@@ -793,3 +793,121 @@ header {
   margin-bottom: 0;
   width: 100%;
 }
+
+/*Footer Section Styling*/
+.footer {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 48px 0 38px 0;
+  font-family: 'Poppins', sans-serif;
+  border-top: none;
+}
+
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding-bottom: 48px;
+}
+
+/* Brand Column */
+.footer-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+.footer-address {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9F9F9F;
+  line-height: 1.5;
+}
+
+/* Headings & Links */
+.footer-heading {
+  font-size: 16px;
+  font-weight: 500;
+  color: #9F9F9F;
+  margin-bottom: 46px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #B88E2F;
+}
+
+/* Newsletter Input & Button */
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.newsletter-input {
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 3px;
+  font-size: 14px;
+  color: #000000;
+  outline: none;
+  width: 200px;
+}
+
+.newsletter-input::placeholder {
+  color: #9F9F9F;
+}
+
+.newsletter-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s ease;
+}
+
+.newsletter-btn:hover {
+  opacity: 0.7;
+}
+
+/* Footer Bottom Divider & Copyright */
+.footer-bottom {
+  border-top: 1px solid #D8D8D8;
+  padding-top: 35px;
+}
+
+.footer-bottom p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+}
