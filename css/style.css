@@ -1,3 +1,7 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500;600;700&display=swap');
+
+/* Reset & Box Sizing */
 * {
   margin: 0;
   padding: 0;
@@ -23,22 +27,21 @@ input {
   font: inherit;
 }
 
-body {
-  font-family: sans-serif;
-}
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap');
-
+/* Centralized Variables */
 :root {
   /* Colors */
   --bg-white: #ffffff;
   --text-black: #000000;
+  --primary-color: #B88E2F;
+  --card-bg: #FFF3E3;
+  --text-dark: #333333;
   
   /* Fonts */
   --font-logo: 'Montserrat', sans-serif;
+  --font-main: 'Poppins', sans-serif;
   --font-nav: 'Poppins', sans-serif;
   
-  /* Sizes & Spacing */
+  /* Layout & Spacing */
   --container-max-width: 1286px;
   --logo-size: 34px;
   --nav-link-size: 16px;
@@ -46,20 +49,21 @@ body {
   --icons-gap: 45px; 
 }
 
-
-
 body {
   font-family: var(--font-nav);
   background-color: var(--bg-white);
+  overflow-x: hidden;
 }
 
-/* Header & Container */
+/* Header & Container Setup */
 header {
   width: 100%;
   background-color: var(--bg-white);
-  padding: 28px 0; /* Vertical spacing */
+  padding: 28px 0;
   display: flex;
   justify-content: center;
+  position: relative; /* Pure Header ke zariye dropdown absolute fit hoga */
+  z-index: 1000;
 }
 
 .container {
@@ -68,7 +72,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* Screen sides protection */
+  padding: 0 20px;
 }
 
 /* Logo */
@@ -85,7 +89,7 @@ header {
   color: var(--text-black);
 }
 
-/* Navigation Links */
+/* Navigation Links (Desktop) */
 .navbar-links ul {
   display: flex;
   align-items: center;
@@ -108,7 +112,7 @@ header {
 .nav-icons {
   display: flex;
   align-items: center;
-  gap: var(--icons-gap); /* Exact Figma Gap */
+  gap: var(--icons-gap);
 }
 
 .nav-icons img {
@@ -121,35 +125,137 @@ header {
 .nav-icons img:hover {
   transform: scale(1.1);
 }
-:root {
-  /* Colors */
-  --bg-white: #ffffff;
-  --text-black: #000000;
-  --primary-color: #B88E2F;
-  --card-bg: #FFF3E3;
-  --text-dark: #333333;
-  
-  /* Fonts */
-  --font-logo: 'Montserrat', sans-serif;
-  --font-main: 'Poppins', sans-serif;
-  
-  /* Layout */
-  --container-max-width: 1286px;
+
+/* Checkbox & Hamburger Default Hide */
+.menu-toggle-checkbox {
+  display: none;
 }
 
-/* Base resets as before... */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
 
-/* Hero Section */
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background-color: #000000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+/* 1. Large Screen / Laptops Adjustment (max-width: 1100px) */
+@media (max-width: 1100px) {
+  :root {
+    --nav-gap: 40px;
+    --icons-gap: 30px;
+  }
+}
+
+/* 2. Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  :root {
+    --nav-gap: 25px;
+    --icons-gap: 20px;
+    --logo-size: 28px;
+  }
+  
+  header {
+    padding: 20px 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* 3. Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 16px 0;
+  }
+
+  .hamburger {
+    display: flex; /* Hamburger toggle icon shows up */
+    order: 3;
+  }
+
+  .logo span {
+    font-size: 22px;
+  }
+
+  .logo img {
+    width: 28px;
+  }
+
+  .nav-icons {
+    gap: 12px;
+  }
+
+  .nav-icons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Dropdown Menu Overlay */
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+    text-align: center;
+  }
+
+  /* Hamburger Toggle Open State */
+  .menu-toggle-checkbox:checked ~ .navbar-links {
+    max-height: 260px;
+    padding: 20px 0;
+  }
+}
+
+/* 4. Extra Small Mobiles (max-width: 400px) */
+@media (max-width: 400px) {
+  .logo span {
+    font-size: 18px;
+  }
+
+  .nav-icons {
+    gap: 8px;
+  }
+
+  .nav-icons img {
+    width: 18px;
+    height: 18px;
+  }
+}
+/* ==========================================
+   Hero Section Base Styles
+   ========================================== */
 .hero-section {
   width: 100%;
   min-height: 716px; 
-  
-  /* Background Image Setup */
   background-image: url('../assets/images/hero-bg.png'); 
   background-position: center center;
-  background-repeat: no-no-repeat;
+  background-repeat: no-repeat; /* Fixed Typo */
   background-size: cover;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,7 +265,7 @@ header {
   width: 100%;
   max-width: var(--container-max-width);
   display: flex;
-  justify-content: flex-end; /* Card right side pe aligned hai */
+  justify-content: flex-end; /* Desktop par card right side par rahega */
   padding: 0 20px;
 }
 
@@ -218,7 +324,99 @@ header {
 .hero-btn:hover {
   background-color: #967123;
 }
-/* Browse The Range Section */
+
+/* ==========================================
+   Hero Section Responsive Media Queries
+   ========================================== */
+
+/* --- 1. Laptops / Smaller Desktops (max-width: 1200px) --- */
+@media (max-width: 1200px) {
+  .hero-section {
+    min-height: 600px;
+  }
+
+  .hero-card {
+    max-width: 550px;
+    padding: 40px 30px;
+  }
+
+  .hero-title {
+    font-size: 42px;
+    line-height: 52px;
+  }
+}
+
+/* --- 2. Tablet Screens (max-width: 992px) --- */
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: 500px;
+    padding: 50px 0;
+  }
+
+  .hero-card {
+    max-width: 480px;
+    padding: 35px 25px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .hero-btn {
+    padding: 16px 40px;
+  }
+}
+
+/* --- 3. Mobile Screens (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 420px;
+    padding: 40px 0;
+  }
+
+  .hero-container {
+    justify-content: center; /* Mobile par card center ho jayega */
+    padding: 0 16px;
+  }
+
+  .hero-card {
+    max-width: 100%;
+    padding: 28px 20px;
+  }
+
+  .hero-subheading {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    line-height: 34px;
+    margin-bottom: 12px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 14px;
+  }
+}
+/* ==========================================
+   Browse The Range Section
+   ========================================== */
 .range-section {
   width: 100%;
   padding: 60px 20px;
@@ -254,14 +452,13 @@ header {
 /* Category Grid */
 .range-grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
 .range-card {
-  flex: 1;
-  min-width: 300px;
+  flex: 1 1 300px;
   max-width: 381px;
   display: flex;
   flex-direction: column;
@@ -284,7 +481,7 @@ header {
 }
 
 .range-card:hover .range-img-wrapper img {
-  transform: scale(1.03); /* Soft hover effect */
+  transform: scale(1.03);
 }
 
 .range-card-title {
@@ -294,7 +491,81 @@ header {
   color: var(--text-dark);
   margin-top: 30px;
 }
-/* Products Section */
+
+/* ==========================================
+   Browse The Range Responsive Styling
+   ========================================== */
+
+/* --- 1. Tablet Screens (max-width: 992px) --- */
+@media (max-width: 992px) {
+  .range-section {
+    padding: 40px 20px;
+  }
+
+  .range-header {
+    margin-bottom: 40px;
+  }
+
+  .range-title {
+    font-size: 28px;
+  }
+
+  .range-subtitle {
+    font-size: 18px;
+  }
+
+  .range-img-wrapper {
+    height: 380px;
+  }
+
+  .range-card-title {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
+
+/* --- 2. Mobile Screens (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .range-section {
+    padding: 30px 16px;
+  }
+
+  .range-header {
+    margin-bottom: 30px;
+  }
+
+  .range-title {
+    font-size: 24px;
+  }
+
+  .range-subtitle {
+    font-size: 15px;
+  }
+
+  .range-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .range-img-wrapper {
+    height: 320px;
+  }
+
+  .range-card-title {
+    font-size: 18px;
+    margin-top: 16px;
+  }
+}
+
+/* --- 3. Extra Small Mobiles (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .range-img-wrapper {
+    height: 260px; /* Small screen par aspect ratio perfect rakhega */
+  }
+}
+/* ==========================================
+   Products Grid Section Base Styles
+   ========================================== */
 .products-section {
   width: 100%;
   padding: 40px 20px 60px;
@@ -317,14 +588,15 @@ header {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 32px 24px;
   justify-items: center;
 }
 
 /* Product Card Structure */
 .product-card {
-  width: 285px;
+  width: 100%;
+  max-width: 285px;
   height: 446px;
   background-color: #F4F5F7;
   position: relative;
@@ -418,13 +690,7 @@ header {
   text-decoration: line-through;
 }
 
-/* 1. Parent Card (Pehle ye zaroor likho) */
-.product-card {
-  position: relative;
-  overflow: hidden;
-}
-
-/* 2. Product Hover Overlay Container */
+/* Product Hover Overlay Container */
 .product-overlay {
   position: absolute;
   top: 0;
@@ -438,18 +704,16 @@ header {
   justify-content: center;
   gap: 24px;
   opacity: 0;
-  pointer-events: none; /* Mouse jab tak overlay par na aaye, tab tak click disable */
+  pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 10;
 }
 
-/* 3. Card par hover par Overlay show karna */
 .product-card:hover .product-overlay {
   opacity: 1;
-  pointer-events: auto; /* Hover hote hi clicks enable */
+  pointer-events: auto;
 }
 
-/* 4. Overlay Buttons & Actions */
 .add-to-cart-btn {
   background-color: #FFFFFF;
   color: var(--primary-color);
@@ -495,7 +759,6 @@ header {
   display: block;
 }
 
-/* 5. Show More Button */
 .more-btn-wrapper {
   margin-top: 32px;
 }
@@ -516,15 +779,70 @@ header {
   background-color: var(--primary-color);
   color: #FFFFFF;
 }
-/* Variables for Section Colors */
-:root {
-  --primary-color: #B88E2F;
-  --bg-light: #FCF8F3;
-  --text-dark: #3A3A3A;
-  --text-gray: #616161;
+
+/* ==========================================
+   Products Grid Responsive Media Queries
+   ========================================== */
+
+/* 1. Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .products-title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .products-grid {
+    gap: 24px 16px;
+  }
 }
 
-/* Outer Section */
+/* 2. Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .products-section {
+    padding: 30px 16px 40px;
+  }
+
+  .products-title {
+    font-size: 26px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .product-card {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .product-img-box {
+    height: 260px;
+  }
+
+  .show-more-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+/* 3. Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr; /* Single Column Card Layout */
+  }
+
+  .badge {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
+  }
+}
+/* ==========================================
+   Rooms Section Base Styles
+   ========================================== */
 .rooms-section {
   background-color: var(--bg-light);
   padding: 44px 0;
@@ -538,7 +856,8 @@ header {
   display: flex;
   align-items: center;
   gap: 42px;
-  padding-left: 100px; /* Aligns left content */
+  padding-left: 100px; /* Desktop Alignment */
+  padding-right: 20px;
 }
 
 /* Left Content Styles */
@@ -585,6 +904,7 @@ header {
 .rooms-slider-wrapper {
   position: relative;
   flex-grow: 1;
+  width: 100%;
 }
 
 .rooms-slider {
@@ -600,7 +920,7 @@ header {
   width: 372px;
   height: 486px;
   flex-shrink: 0;
-  cursor: pointer; /* Pointer to show clickable */
+  cursor: pointer;
   transition: all 0.4s ease;
 }
 
@@ -610,7 +930,7 @@ header {
   object-fit: cover;
 }
 
-/* Active First Card (Taller as per Figma design) */
+/* Active First Card */
 .room-card-active {
   width: 404px;
   height: 582px;
@@ -666,7 +986,7 @@ header {
 .slider-next-arrow {
   position: absolute;
   top: 40%;
-  left: 750px; /* Positions perfectly on the second card */
+  left: 750px;
   width: 48px;
   height: 48px;
   background-color: #FFFFFF;
@@ -692,7 +1012,6 @@ header {
   gap: 12px;
   margin-top: 24px;
   padding-left: 428px;
-
 }
 
 .dot {
@@ -709,18 +1028,120 @@ header {
   outline: 1px solid var(--primary-color, #B88E2F);
   outline-offset: 4px;
 }
-/*Funiro Furniture Gallery Section */
+
+/* ==========================================
+   Rooms Slider Responsive Styling
+   ========================================== */
+
+/* 1. Large Laptops / Tablets (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .rooms-container {
+    padding-left: 40px;
+    gap: 30px;
+  }
+
+  .slider-next-arrow {
+    left: auto;
+    right: 20px;
+  }
+
+  .slider-dots {
+    padding-left: 0;
+  }
+}
+
+/* 2. Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .rooms-container {
+    flex-direction: column;
+    padding-left: 20px;
+    align-items: flex-start;
+  }
+
+  .rooms-content {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .rooms-title {
+    font-size: 32px;
+  }
+
+  .slider-dots {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* 3. Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .rooms-section {
+    padding: 30px 0;
+  }
+
+  .rooms-container {
+    padding: 0 16px;
+  }
+
+  .rooms-title {
+    font-size: 26px;
+  }
+
+  .rooms-desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .rooms-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Slider items auto scale on Mobile */
+  .room-card, .room-card-active {
+    width: 280px;
+    height: 380px;
+  }
+
+  .room-badge-text {
+    padding: 16px;
+    width: 160px;
+  }
+
+  .room-category {
+    font-size: 13px;
+  }
+
+  .room-name {
+    font-size: 20px;
+  }
+
+  .room-arrow-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .slider-next-arrow {
+    top: 35%;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
+/* ==========================================
+   Funiro Furniture Gallery Section Base
+   ========================================== */
 .furniture-section {
   width: 100%;
   padding: 40px 0 50px 0;
   background-color: #FFFFFF;
   overflow: hidden;
-  /* border-bottom: 1px solid #D8D8D8; Neeche wali horizontal line */
 }
 
 .furniture-header {
   text-align: center;
   margin-bottom: 32px;
+  padding: 0 16px;
 }
 
 .furniture-subtitle {
@@ -738,7 +1159,7 @@ header {
   color: #3A3A3A;
 }
 
-/* Gallery Wrapper (Asymmetric Masonry) */
+/* Gallery Wrapper (Asymmetric Masonry Desktop) */
 .furniture-gallery {
   display: flex;
   justify-content: center;
@@ -775,7 +1196,7 @@ header {
   box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
 }
 
-/* Specific Image Dimensions matching Figma */
+/* Specific Image Dimensions matching Figma Desktop */
 .img-g1 { width: 274px; height: 382px; }
 .img-g2 { width: 381px; height: 323px; }
 .img-g3 { width: 451px; height: 312px; }
@@ -788,13 +1209,101 @@ header {
 
 .furniture-divider {
   border: none;
-  border-top: 1px solid #D8D8D8; /* Line ka color */
-  margin-top: 80px;              /* Images se gap */
+  border-top: 1px solid #D8D8D8;
+  margin-top: 80px;
   margin-bottom: 0;
   width: 100%;
 }
 
-/*Footer Section Styling*/
+/* ==========================================
+   Furniture Gallery Responsive Styling
+   ========================================== */
+
+/* 1. Large Screen Adjustments (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .furniture-gallery {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+}
+
+/* 2. Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .furniture-subtitle {
+    font-size: 18px;
+  }
+
+  .furniture-title {
+    font-size: 32px;
+  }
+
+  .furniture-gallery {
+    transform: scale(1);
+    flex-wrap: wrap;
+    padding: 0 16px;
+  }
+
+  .furniture-divider {
+    margin-top: 40px;
+  }
+}
+
+/* 3. Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .furniture-section {
+    padding: 30px 0 30px 0;
+  }
+
+  .furniture-header {
+    margin-bottom: 24px;
+  }
+
+  .furniture-subtitle {
+    font-size: 15px;
+  }
+
+  .furniture-title {
+    font-size: 24px;
+  }
+
+  /* Mobile par grid/row flexible stack ho jayega */
+  .furniture-gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .gallery-col, 
+  .gallery-row {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* All images auto fit inside mobile viewport */
+  .furniture-gallery img {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 240px !important;
+  }
+
+  .furniture-divider {
+    margin-top: 30px;
+  }
+}
+
+/* 4. Extra Small Mobiles (max-width: 480px) */
+@media (max-width: 480px) {
+  .furniture-gallery img {
+    max-width: 100% !important;
+    height: 200px !important;
+  }
+}
+
+/* ==========================================
+   Footer Section Styling
+   ========================================== */
 .footer {
   width: 100%;
   background-color: #FFFFFF;
@@ -815,6 +1324,7 @@ header {
   align-items: flex-start;
   gap: 40px;
   padding-bottom: 48px;
+  flex-wrap: wrap; /* Safety for scaling */
 }
 
 /* Brand Column */
@@ -910,4 +1420,75 @@ header {
   font-weight: 400;
   color: #000000;
   margin: 0;
+}
+
+/* ==========================================
+   Footer Responsive Breakpoints
+   ========================================== */
+
+/* 1. Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .footer-top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+    padding-bottom: 36px;
+  }
+
+  .footer-logo,
+  .footer-heading {
+    margin-bottom: 24px;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+}
+
+/* 2. Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .footer {
+    padding: 36px 0 24px 0;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr; /* Single column stack */
+    gap: 32px;
+  }
+
+  .newsletter-form {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .newsletter-input {
+    flex-grow: 1;
+    width: auto;
+  }
+
+  .footer-bottom {
+    padding-top: 24px;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: 14px;
+  }
+}
+
+/* 3. Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .newsletter-form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .newsletter-input {
+    width: 100%;
+  }
+
+  .newsletter-btn {
+    align-self: flex-start;
+  }
 }
