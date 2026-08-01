@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - Furniro</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Dynamic Header -->
+    <header class="navbar" id="site-header"></header>
+
+    <!-- Hero Banner Section -->
+    <section class="shop-banner">
+      <div class="shop-banner-content">
+        <img
+          src="./assets/images/logo.svg"
+          alt="Furniro Logo"
+          style="width: 45px; height: auto; margin-bottom: 5px"
+        />
+        <h1>Cart</h1>
+        <p>
+          <a
+            href="index.html"
+            style="color: #000; text-decoration: none; font-weight: 600"
+            >Home</a
+          >
+          &gt; <span style="color: #727272">Cart</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Cart Section -->
+    <section class="cart-section container">
+      <div class="cart-container">
+        <!-- Left Side: Products Table -->
+        <div class="cart-table-wrapper">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <!-- Dynamic JS se yahan cart items ki rows inject hongi -->
+            <tbody id="cart-items">
+              <!-- Sample Placeholder Row (JS se dynamic generate hoga) -->
+              <tr>
+                <td class="cart-product-info">
+                  <div class="cart-img-box">
+                    <img src="./assets/images/sofa.png" alt="Asgaard sofa" />
+                  </div>
+                  <span>Asgaard sofa</span>
+                </td>
+                <td class="cart-price">Rs. 250,000.00</td>
+                <td>
+                  <label class="visually-hidden" for="qty-asgaard"
+                    >Quantity</label
+                  >
+                  <input
+                    id="qty-asgaard"
+                    type="number"
+                    class="cart-qty-input"
+                    value="1"
+                    min="1"
+                    title="Quantity"
+                    placeholder="1"
+                    aria-label="Quantity for Asgaard sofa"
+                  />
+                </td>
+                <td class="cart-subtotal">Rs. 250,000.00</td>
+                <td class="cart-remove">
+                  <button class="btn-remove-item" title="Remove Item">
+                    <svg
+                      width="21"
+                      height="22"
+                      viewBox="0 0 21 22"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.5 5.5L4.5 17.5M4.5 5.5L16.5 17.5"
+                        stroke="#B88E2F"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Right Side: Cart Totals Box -->
+        <div class="cart-totals-box">
+          <h2>Cart Totals</h2>
+          <div class="totals-row">
+            <span>Subtotal</span>
+            <span class="subtotal-val" id="cart-subtotal">Rs. 250,000.00</span>
+          </div>
+          <div class="totals-row total">
+            <span>Total</span>
+            <span class="total-val" id="cart-total">Rs. 250,000.00</span>
+          </div>
+          <a href="checkout.html" class="btn-checkout">Check Out</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Bar (Reusable Component) -->
+    <div id="service-features"></div>
+
+    <!-- Dynamic Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/cart.js"></script>
+  </body>
+</html>

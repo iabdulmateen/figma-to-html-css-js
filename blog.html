@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Furniro</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Dynamic Header -->
+    <header class="navbar" id="site-header"></header>
+
+    <!-- Banner -->
+    <section class="shop-banner">
+      <div class="shop-banner-content">
+        <img
+          src="./assets/images/logo.svg"
+          alt="Furniro Logo"
+          style="width: 45px; margin-bottom: 5px"
+        />
+        <h1>Blog</h1>
+        <p>
+          <a href="index.html" style="color: #000; font-weight: 600">Home</a>
+          &gt; <span style="color: #727272">Blog</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Blog Section -->
+    <section class="blog-section container">
+      <div class="blog-container">
+        <!-- Left Column: Blog Posts List -->
+        <div class="blog-posts-list" id="blog-posts-container">
+          <!-- Dynamically Rendered by JS -->
+        </div>
+
+        <!-- Right Column: Sidebar -->
+        <aside class="blog-sidebar">
+          <!-- Search Box -->
+          <div class="sidebar-widget search-widget">
+            <div class="search-input-box">
+              <input
+                type="text"
+                id="blog-search-input"
+                placeholder="Search..."
+              />
+              <button id="btn-blog-search">
+                <svg
+                  width="19"
+                  height="19"
+                  viewBox="0 0 19 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="8.5"
+                    cy="8.5"
+                    r="7.5"
+                    stroke="#000"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M14 14L17.5 17.5"
+                    stroke="#000"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Categories Widget -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Categories</h3>
+            <ul class="categories-list" id="blog-categories-list">
+              <!-- Dynamically Rendered -->
+            </ul>
+          </div>
+
+          <!-- Recent Posts Widget -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Recent Posts</h3>
+            <div class="recent-posts-list" id="recent-posts-container">
+              <!-- Dynamically Rendered -->
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="blog-pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn next-btn">Next</button>
+      </div>
+    </section>
+
+    <!-- Features Bar (Reusable Component) -->
+    <div id="service-features"></div>
+
+    <!-- Dynamic Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/blog.js"></script>
+  </body>
+</html>

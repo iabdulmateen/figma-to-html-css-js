@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Furniro</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Dynamic Header -->
+    <header class="navbar" id="site-header"></header>
+
+    <!-- Hero Banner Section -->
+    <section class="shop-banner">
+      <div class="shop-banner-content">
+        <img
+          src="./assets/images/logo.svg"
+          alt="Furniro Logo"
+          style="width: 45px; height: auto; margin-bottom: 5px"
+        />
+        <h1>Checkout</h1>
+        <p>
+          <a
+            href="index.html"
+            style="color: #000; text-decoration: none; font-weight: 600"
+            >Home</a
+          >
+          &gt; <span style="color: #727272">Checkout</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Checkout Section -->
+    <section class="checkout-section container">
+      <form id="checkout-form" class="checkout-container">
+        <!-- Left Column: Billing Details -->
+        <div class="billing-details">
+          <h2>Billing details</h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" required />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="company-name">Company Name (Optional)</label>
+            <input type="text" id="company-name" />
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country / Region</label>
+            <select id="country" required>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="India">India</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="street-address">Street address</label>
+            <input type="text" id="street-address" required />
+          </div>
+
+          <div class="form-group">
+            <label for="town-city">Town / City</label>
+            <input type="text" id="town-city" required />
+          </div>
+
+          <div class="form-group">
+            <label for="province">Province</label>
+            <select id="province" required>
+              <option value="Western Province">Western Province</option>
+              <option value="Sindh">Sindh</option>
+              <option value="Punjab">Punjab</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="zip-code">ZIP code</label>
+            <input type="text" id="zip-code" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" required />
+          </div>
+
+          <div class="form-group margin-top-20">
+            <textarea
+              id="additional-info"
+              placeholder="Additional Information"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Right Column: Order Summary & Payment -->
+        <div class="order-summary-box">
+          <div class="summary-header">
+            <h3>Product</h3>
+            <h3>Subtotal</h3>
+          </div>
+
+          <!-- Dynamic Items inserted by JS -->
+          <div id="checkout-items-list" class="checkout-items-list">
+            <!-- Sample render item -->
+          </div>
+
+          <div class="summary-row">
+            <span class="label">Subtotal</span>
+            <span class="val" id="checkout-subtotal">Rs. 0.00</span>
+          </div>
+
+          <div class="summary-row total-row">
+            <span class="label">Total</span>
+            <span class="total-val" id="checkout-total">Rs. 0.00</span>
+          </div>
+
+          <hr class="checkout-divider" />
+
+          <!-- Payment Options -->
+          <div class="payment-methods">
+            <div class="payment-option">
+              <input
+                type="radio"
+                id="bank-transfer"
+                name="payment_method"
+                value="bank"
+                checked
+              />
+              <label for="bank-transfer">Direct Bank Transfer</label>
+              <p class="payment-desc">
+                Make your payment directly into our bank account. Please use
+                your Order ID as the payment reference. Your order will not be
+                shipped until the funds have cleared in our account.
+              </p>
+            </div>
+
+            <div class="payment-option">
+              <input
+                type="radio"
+                id="bank-transfer-2"
+                name="payment_method"
+                value="direct_bank"
+              />
+              <label for="bank-transfer-2" class="muted-label"
+                >Direct Bank Transfer</label
+              >
+            </div>
+
+            <div class="payment-option">
+              <input type="radio" id="cod" name="payment_method" value="cod" />
+              <label for="cod" class="muted-label">Cash On Delivery</label>
+            </div>
+          </div>
+
+          <p class="privacy-text">
+            Your personal data will be used to support your experience
+            throughout this website, to manage access to your account, and for
+            other purposes described in our <strong>privacy policy.</strong>
+          </p>
+
+          <button type="submit" class="btn-place-order">Place order</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Features Bar (Reusable Component) -->
+    <div id="service-features"></div>
+
+    <!-- Dynamic Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/checkout.js"></script>
+  </body>
+</html>

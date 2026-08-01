@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - Furniro</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 1. Header (Navbar) -->
+    <header class="navbar" id="site-header"></header>
+    <!-- 2. Shop Banner -->
+    <section class="shop-banner">
+      <div class="shop-banner-content">
+        <h1>Shop</h1>
+        <p><span>Home</span> &gt; Shop</p>
+      </div>
+    </section>
+
+    <!-- 3. Toolbar -->
+    <section class="shop-toolbar">
+      <div class="toolbar-container">
+        <div class="toolbar-left">
+          <button class="filter-btn">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="4" y1="21" x2="4" y2="14"></line>
+              <line x1="4" y1="10" x2="4" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="3"></line>
+              <line x1="20" y1="21" x2="20" y2="16"></line>
+              <line x1="20" y1="12" x2="20" y2="3"></line>
+              <line x1="1" y1="14" x2="7" y2="14"></line>
+              <line x1="9" y1="8" x2="15" y2="8"></line>
+              <line x1="17" y1="16" x2="23" y2="16"></line>
+            </svg>
+            Filter
+          </button>
+          <div class="view-icons">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z" />
+            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 4h18v2H3zm0 7h18v2H3zm0 7h18v2H3z" />
+            </svg>
+          </div>
+          <span class="divider">|</span>
+          <span class="results-text">Showing 1–16 of 32 results</span>
+        </div>
+
+        <div class="toolbar-right">
+          <div class="show-control">
+            <label for="show-input">Show</label>
+            <input id="show-input" type="number" value="16" readonly />
+          </div>
+          <div class="sort-control">
+            <label for="sort-input">Short by</label>
+            <input id="sort-input" type="text" value="Default" readonly />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Dynamic Products Grid -->
+    <section class="shop-products">
+      <div
+        class="products-container"
+        style="max-width: 1240px; margin: 40px auto; padding: 0 24px"
+      >
+        <!-- JS Se Render Hoga -->
+        <div class="products-grid" id="products-grid"></div>
+
+        <!-- Pagination Buttons -->
+        <div class="pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn next-btn">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Service Features -->
+    <div id="service-features"></div>
+    <!-- 6. Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Script File Connect -->
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/shop.js"></script>
+  </body>
+</html>

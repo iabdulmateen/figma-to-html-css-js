@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Comparison - Furniro</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Dynamic Header -->
+    <header class="navbar" id="site-header"></header>
+
+    <!-- Hero Banner Section (Reusing shop-banner CSS) -->
+    <section class="shop-banner">
+      <div class="shop-banner-content">
+        <img
+          src="./assets/images/logo.svg"
+          alt="Furniro Logo"
+          style="width: 45px; height: auto; margin-bottom: 5px"
+        />
+        <h1>Product Comparison</h1>
+        <p>
+          <a
+            href="index.html"
+            style="color: #000; text-decoration: none; font-weight: 600"
+            >Home</a
+          >
+          &gt; <span style="color: #727272">Comparison</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Comparison Section -->
+    <section class="comparison-section container">
+      <!-- Horizontal Scrollable Container for Mobile -->
+      <div class="comparison-scroll-wrapper">
+        <div class="comparison-table" id="comparison-table">
+          <!-- Dynamic JS se yahan Header Product Cards aur Specs grid inject hongi -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Bar -->
+    <div id="service-features"></div>
+
+    <!-- Dynamic Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/comparison.js"></script>
+  </body>
+</html>

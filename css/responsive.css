@@ -1,0 +1,622 @@
+/* ==========================================
+   COMPLETE RESPONSIVE STYLES
+   ========================================== */
+/* ==========================================
+   NAVBAR MOBILE RESPONSIVE (max-width: 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+  }
+
+  .nav-icons {
+    gap: 12px;
+  }
+
+  .nav-icons img {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Desktop links mobile par dropdown me chale jayenge */
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 0;
+  }
+
+  .menu-toggle-checkbox:checked ~ .nav-menu {
+    max-height: 250px;
+    padding: 10px 0;
+  }
+}
+/* ------------------------------------------
+   1. LAPTOPS & SMALL DESKTOPS (max-width: 1024px)
+   ------------------------------------------ */
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: 520px;
+    padding: 30px 20px;
+  }
+
+  .hero-card {
+    max-width: 480px;
+    padding: 35px 30px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+    line-height: 48px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ------------------------------------------
+   2. TABLETS & SMALL SCREENS (max-width: 768px)
+   ------------------------------------------ */
+@media (max-width: 768px) {
+  /* Header Adjustments */
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  /* Hero Banner */
+  .hero-section {
+    min-height: auto;
+    padding: 40px 16px;
+    background-position: center;
+  }
+
+  .hero-container {
+    justify-content: center; /* Mobile par hero card center me aaye */
+    padding: 0;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .hero-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 12px;
+  }
+
+  .hero-subheading {
+    font-size: 14px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+    padding: 16px 0;
+    display: block;
+  }
+
+  /* Browse The Range / Categories Section */
+  .categories-grid, 
+  .range-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 16px;
+  }
+
+  .category-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  /* Our Products Grid */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* Mobile par 2 cards in a row */
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .product-card {
+    padding: 8px;
+  }
+
+  .product-title {
+    font-size: 16px;
+  }
+
+  .product-price {
+    font-size: 14px;
+  }
+
+  /* Rooms / Inspiration Section */
+  .rooms-section {
+    flex-direction: column;
+    padding: 30px 16px;
+    text-align: center;
+  }
+
+  .rooms-content {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
+
+
+/* ==========================================
+   FURNIRO RESPONSIVE CSS (EXACT MATCH)
+   ========================================== */
+
+/* 1. TABLET & MOBILE FIXES (768px & Below) */
+@media (max-width: 768px) {
+  /* Main Container: Stack Gallery (Top) & Summary (Bottom) */
+  .product-detail-section {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 16px !important;
+    gap: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Gallery: Main Image (Top) & Thumbnails (Bottom) */
+  .product-gallery {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  /* Main Display Image Box */
+  .main-image-box {
+    width: 100% !important;
+    background-color: #f9f1e7;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .main-image-box img#main-product-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 350px !important;
+    object-fit: contain !important;
+    display: block;
+  }
+
+  /* Horizontal Thumbnails Row */
+  .thumbnail-list {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    padding-bottom: 6px !important;
+  }
+
+  .thumbnail-list .thumb-img {
+    width: 65px !important;
+    height: 65px !important;
+    flex-shrink: 0 !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+  }
+
+  /* Product Info & Summary Section */
+  .product-summary {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .product-summary .product-title {
+    font-size: 24px !important;
+  }
+
+  /* Actions (Quantity Counter & Buttons) */
+  .product-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .quantity-counter {
+    width: 110px !important;
+  }
+
+  .product-actions .btn-outline {
+    flex: 1 !important;
+    min-width: 120px !important;
+    padding: 12px 8px !important;
+    font-size: 14px !important;
+    white-space: nowrap;
+  }
+
+  /* Tabs Description Images Grid Fix */
+  .desc-images-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .desc-img-box img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px;
+  }
+}
+
+/* 2. SMALL MOBILES (480px & Below) */
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+/* ==========================================
+   PRODUCT COMPARISON PAGE RESPONSIVE FIX
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* 1. Mobile par table squeeze hone ki bajaye smoothly scroll ho */
+  .comparison-scroll-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding-bottom: 15px;
+  }
+
+  /* 2. Columns crash na hon, is liye minimum width 800px rakhi hai */
+  .comparison-table {
+    min-width: 800px !important;
+  }
+
+  /* 3. Section Titles mobile spacing */
+  .comp-section-title {
+    font-size: 18px !important;
+    margin-top: 20px !important;
+  }
+
+  /* 4. Cell padding adjustment */
+  .comp-cell {
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small Mobiles Text & Button sizing */
+  .comp-title-cell h3 {
+    font-size: 16px !important;
+  }
+
+  .comp-img-box img {
+    height: 90px !important;
+  }
+
+  .btn-primary-gold {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+}
+/* ==========================================
+   COMPARISON PAGE MOBILE FIX
+   ========================================== */
+@media (max-width: 768px) {
+  /* 1. Scroll container ko smooth horizontal scroll dena */
+  .comparison-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* 2. Table ki width mobile ke hisab se balanced karna */
+  .comparison-table {
+    min-width: 570px; /* 900px se kam karke compact kar diya */
+  }
+
+  /* 3. Grid Columns: 1st column 120px + Baqi 3 columns 150px each */
+  .comp-row {
+    grid-template-columns: 120px repeat(3, 150px);
+  }
+
+  /* 4. Left Column (Labels e.g. Sales Package, Material) ko Sticky banana 
+     taake right scroll karte waqt label samne hi pinned rahe */
+  .comp-row > .comp-cell:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 5;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.06); /* Divider line effect */
+  }
+
+  /* 5. Mobile screen ke liye padding aur fonts compact karna */
+  .comp-cell {
+    padding: 10px 8px;
+  }
+
+  .comp-title-cell h3 {
+    font-size: 15px;
+  }
+
+  .comp-section-title {
+    font-size: 16px;
+    padding-left: 8px;
+    margin-top: 20px;
+  }
+
+  .comp-label,
+  .comp-val {
+    font-size: 12px;
+    word-break: break-word; /* Long text (model numbers) break ho kar next line par aye ga */
+  }
+
+  /* Images aur Buttons resize */
+  .comp-img-box img {
+    height: 85px;
+  }
+
+  .comp-price {
+    font-size: 13px;
+  }
+
+  .comp-rating {
+    font-size: 11px;
+  }
+
+  .btn-primary-gold {
+    padding: 8px 12px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .comp-add-card select {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+/* ==========================================
+   CART PAGE RESPONSIVE (css/responsive.css)
+   ========================================== */
+@media (max-width: 992px) {
+  .cart-container {
+    flex-direction: column;
+  }
+
+  .cart-totals-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .cart-table th,
+  .cart-table td {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+
+  .cart-img-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cart-qty-input {
+    width: 40px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .cart-totals-box {
+    padding: 24px 20px;
+  }
+
+  .cart-totals-box h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .btn-checkout {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+}
+/* ==========================================
+   CHECKOUT PAGE RESPONSIVE FIX
+   ========================================== */
+@media (max-width: 992px) {
+  .checkout-section {
+    padding: 30px 16px;
+  }
+
+  .checkout-container {
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+
+  .billing-details,
+  .order-summary-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .billing-details h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .summary-header {
+    font-size: 18px;
+  }
+
+  .summary-row .total-val {
+    font-size: 18px;
+  }
+
+  .btn-place-order {
+    width: 100%;
+  }
+}
+/* ==========================================
+   CONTACT PAGE RESPONSIVE STYLES
+   ========================================== */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .contact-info,
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .features-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 40px 16px;
+  }
+
+  .contact-header {
+    margin-bottom: 40px;
+  }
+
+  .contact-header h2 {
+    font-size: 26px;
+  }
+
+  .info-text h3 {
+    font-size: 20px;
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .btn-contact-submit {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .features-bar {
+    padding: 50px 20px;
+  }
+
+  .features-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .feature-info h4 {
+    font-size: 20px;
+  }
+}
+/* ==========================================
+   BLOG RESPONSIVE STYLES
+   ========================================== */
+@media (max-width: 992px) {
+  .blog-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .blog-sidebar {
+    width: 100%;
+  }
+
+  .blog-post-img img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-post-title {
+    font-size: 22px;
+  }
+
+  .blog-meta {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 13px;
+  }
+
+  .blog-post-img img {
+    height: 220px;
+  }
+
+  .page-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .page-btn.next-btn {
+    width: 75px;
+  }
+}
