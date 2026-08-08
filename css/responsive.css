@@ -279,7 +279,51 @@
     border-radius: 8px;
   }
 }
+/* Mobile Fixes for Product Page (576px & below) */
+@media (max-width: 576px) {
+  /* 1. Actions & Buttons Fix */
+  .product-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
 
+  .quantity-counter {
+    width: 110px !important;
+    padding: 0 8px !important; /* Padding kam ki taakay text overlap na ho */
+    gap: 8px !important;       /* Inner gap fix */
+    justify-content: space-between !important;
+  }
+
+  .quantity-counter input {
+    width: 20px !important;
+  }
+
+  .product-actions .btn-outline {
+    flex: 1 1 auto !important;
+    min-width: 110px !important;
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  /* 2. Product Description Tabs Fix */
+  .tabs-header {
+    display: flex !important;
+    flex-direction: column !important; /* Tabs ko stack kar diya */
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .tab-btn {
+    font-size: 16px !important; /* Mobile ke liye font size reduce kiya */
+    padding: 4px 0 !important;
+    text-align: center !important;
+  }
+}
 /* 2. SMALL MOBILES (480px & Below) */
 @media (max-width: 480px) {
   .products-grid {
@@ -618,5 +662,60 @@
 
   .page-btn.next-btn {
     width: 75px;
+  }
+}
+/* 1. Label text ko hide karne ke liye */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* 2. Mobile Action Buttons Layout Fix */
+@media (max-width: 576px) {
+  .product-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  /* Counter box me sirf (- 1 +) show karne ke liye */
+  .quantity-counter {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100px !important;
+    height: 48px !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .quantity-counter input {
+    width: 25px !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+
+  /* Add to Cart button */
+  .product-actions .add-to-cart-btn {
+    flex: 1 !important;
+    height: 48px !important;
+    padding: 0 10px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Compare button (neche wali row me full width) */
+  .product-actions .btn-outline:not(.add-to-cart-btn) {
+    width: 100% !important;
+    height: 48px !important;
+    font-size: 14px !important;
   }
 }
